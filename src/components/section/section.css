@@ -1,0 +1,23 @@
+section{
+    padding: 10px;
+    background-color: #dc76b8;
+    display: flex;
+    gap: 20px;
+    justify-content: right;
+}
+
+.card{
+    font-family: inherit,Arial, Helvetica, sans-serif;
+    width: 400px;
+    height: 450px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(211,147,147,0.1);
+    background-color: #7683dc;
+    border-radius: 12px;
+    align-items: right;
+    justify-content: space-between;
+}
+.image{
+    width: 280px;
+    height: 280px;
+}
