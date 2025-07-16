@@ -4,19 +4,21 @@ export const UserCard = ({user}) => {
     // declaracion de hookcon su nombre, llamado , estado inicial
       const [isContacted, setIsContacted] = useState(false)
     // definimos los campos que vamos afectar del arreglo users
-      const {id,name,description,image}= user
+      const {id,firstname,email,image, phone, role}= user
     // evento para desatar el hook 
       const handleClink=()=>{
 
         setIsContacted(!isContacted);
       }
-      console.log(`targetas de ${name} fue eliminada`)
+      // console.log(`targetas de ${firstname} fue eliminada`)
 
 return (
     <div className='card'>
-      <img className='image' src={image} alt={name} />
-        <h2 className='name'>{name}</h2>
-        <p className=''>{description}</p>
+      <img className='image' src={image} alt={firstname} />
+        <h2 className='name'>{firstname}</h2>
+        <p>{phone}</p>
+        <p className=''>{email}</p>
+        <p className=''>{role}</p>
         <button id={id} onClick={()=> handleClink()}>
             {
                 isContacted ? 'Contatado' : 'Contactar'
