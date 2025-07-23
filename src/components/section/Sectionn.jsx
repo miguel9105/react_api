@@ -55,32 +55,33 @@ export const Sectionn = () => {
   }, [searchTerm]);
 
   return (
-    <div>
-      <h2>{count}</h2>
-      
-      {/* Formulario de búsqueda */}
-      <form onSubmit={handleSubmit} className="search-form">
-        <input
-          type="text"
-          placeholder="Buscar usuarios..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button type="submit">Buscar</button>
-      </form>
+    
 
-      {isLoading && <p>Cargando...</p>}
-      {error && <p className="error">Error: {error}</p>}
+  <div className="section-container">
+    
+    
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
+        type="text"
+        placeholder="Buscar usuarios..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button type="submit">Buscar</button>
+    </form>
 
-      <section>
-        {users.length > 0 ? (
-          users.map((user) => (
-            <UserCard key={user.id} user={user} />
-          ))
-        ) : (
-          !isLoading && <p>No se encontraron usuarios</p>
-        )}
-      </section>
+    {isLoading && <p className="loading-message">Cargando...</p>}
+    {error && <p className="error-message">Error: {error}</p>}
+
+    <div className="users-grid">
+      {users.length > 0 ? (
+        users.map((user) => (
+          <UserCard key={user.id} user={user} />
+        ))
+      ) : (
+        !isLoading && <p className="no-results">No se encontraron usuarios</p>
+      )}
     </div>
-  );
+  </div>
+);
 };
